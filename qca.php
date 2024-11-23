@@ -27,11 +27,11 @@ $currentDate = date($config_datapoints['filename_format']);
 
 $outputFolder = '/var/www/reconnect/data_config/qca_csv_files';
 
-if (!is_dir(filename: $outputFolder)) {
+if (!is_dir($outputFolder)) {
     mkdir($outputFolder, 0777, true); // true allows recursive directory creation
 }
 
-//$fileName = $outputFolder . "/ANDAVAR_TEXTILES_" . $currentDate . ".csv";
+$fileName = $outputFolder . "/ANDAVAR_TEXTILES_" . $currentDate . ".csv";
 
 
 $queryGenerator = new QueryGenerator($config_datapoints,$start_time,$end_time);

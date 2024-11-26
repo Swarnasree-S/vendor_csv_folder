@@ -31,7 +31,7 @@ if (!is_dir($outputFolder)) {
     mkdir($outputFolder, 0777, true); // true allows recursive directory creation
 }
 
-$fileName = $outputFolder . "/ANDAVAR_TEXTILES_" . $currentDate . ".csv";
+$fileName = $outputFolder . "/VIJAYANTH2_" . $currentDate . ".csv";
 
 
 $queryGenerator = new QueryGenerator($config_datapoints,$start_time,$end_time);
@@ -137,15 +137,15 @@ try {
     //This ftpClass.php file needs external phpseclib library to function. so we need to install that via composer
     //composer require phpseclib/phpseclib:^2.0   
      
-    $ftp = new FileTransfer('52.41.144.51', 'Vijayanth', 'hka564k');
-    $ftp->connect();
-    $ftp->uploadFile($fileName, '/VIJAYANTH2/'.$currentDate.'.csv');
-    $ftp->close();
+    //$ftp = new FileTransfer('52.41.144.51', 'Vijayanth', 'hka564k');
+    //$ftp->connect();
+    // $ftp->uploadFile($fileName, '/VIJAYANTH2/'.$currentDate.'.csv');
+    //$ftp->close();
 
-    //$sftp = new FileTransfer('dev.renewgrid.in', 'username', 'pwd', true);
-    //$sftp->connect();
-    //$sftp->uploadFile('output.csv', '/var/www/renewgrid/output.csv');
-    //$sftp->close();
+    $sftp = new FileTransfer('dev.renewgrid.in', 'username', 'pwd', true);
+    $sftp->connect();
+    $sftp->uploadFile('output.csv', '/var/www/renewgrid/output.csv');
+    $sftp->close();
 
     //This ftpClass.php file needs external phpseclib library to function. so we need to install that via composer
     //composer require phpseclib/phpseclib:^2.0

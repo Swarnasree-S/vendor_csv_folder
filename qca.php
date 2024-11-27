@@ -139,7 +139,7 @@ try {
      
     //$ftp = new FileTransfer('52.41.144.51', 'Vijayanth', 'hka564k');
     //$ftp->connect();
-    // $ftp->uploadFile($fileName, '/VIJAYANTH2/'.$currentDate.'.csv');
+    //$ftp->uploadFile($fileName, '/VIJAYANTH2/'.$currentDate.'.csv');
     //$ftp->close();
 
     $sftp = new FileTransfer('dev.renewgrid.in', 'username', 'pwd', true);
